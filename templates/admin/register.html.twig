@@ -1,0 +1,220 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+
+    <div class="sm-wrapper" data-sortable-id="sm_form_wizard_validation_2">
+        <div class="title_box sm-header-style-1">
+            <div class="sm-actions">
+                {#<a href="javascript:void(0)" class="tooltip_cus fullscreen_element">#}
+                    {#<span class="extra-tooltip">Fullscreen</span>#}
+                    {#<i class="material-icons">fullscreen</i>#}
+                {#</a>#}
+                <a href="javascript:void(0)" class="tooltip_cus refresh_element">
+                    <span class="extra-tooltip">Refresh</span>
+                    <i class="material-icons">refresh</i>
+                </a>
+                <a href="javascript:void(0)" class="tooltip_cus minimize_element">
+                    <span class="extra-tooltip">Collapse / Expand</span>
+                    <i class="material-icons">import_export</i>
+                </a>
+                {#<a href="javascript:void(0)" class="tooltip_cus remove_element">#}
+                    {#<span class="extra-tooltip">Remove</span>#}
+                    {#<i class="material-icons">close</i>#}
+                {#</a>#}
+            </div>
+            <h6 class="sm-header nodrag">
+                Register new participant
+            </h6>
+        </div>
+        <div class="sm-box">
+
+            <form action="{{ path('admin_register_participants') }}" method="POST" name="form-wizard" class="form-control-with-bg">
+                <!-- begin wizard -->
+                <div id="wizard_validation" class="sw-main sw-theme-default">
+                    <!-- begin wizard-step -->
+                    <ul class="nav nav-tabs step-anchor">
+                        <li class="col-md-3 col-sm-4 col-6 active">
+                            <a href="#step-5">
+                                <span class="number">1</span>
+                                <span class="info text-ellipsis">
+                                                                            Personal Info
+                                                                            <small class="text-ellipsis">Step 1</small>
+                                                                        </span>
+                            </a>
+                        </li>
+                        <li class="col-md-3 col-sm-4 col-6">
+                            <a href="#step-6">
+                                <span class="number">2</span>
+                                <span class="info text-ellipsis">
+                                                                            Contact Info
+                                                                            <small class="text-ellipsis">Step 2</small>
+                                                                        </span>
+                            </a>
+                        </li>
+                        <li class="col-md-3 col-sm-4 col-6">
+                            <a href="#step-7">
+                                <span class="number">3</span>
+                                <span class="info text-ellipsis">
+                                                                            Other Info
+                                                                            <small class="text-ellipsis">Step 3</small>
+                                                                        </span>
+                            </a>
+                        </li>
+                        <li class="col-md-3 col-sm-4 col-6">
+                            <a href="#step-8">
+                                <span class="number">4</span>
+                                <span class="info text-ellipsis">
+                                                                            Confirm & Finish
+                                                                            <small class="text-ellipsis">Step 4</small>
+                                                                        </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- end wizard-step -->
+                    <!-- begin wizard-content -->
+                    <div class="sw-container tab-content" style="min-height: 338px;">
+                        <!-- begin step-1 -->
+                        <div id="step-5" class="step-content" style="display: block;">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-8 offset-md-2">
+                                                                                <span class="d-block no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">
+                                                                                    Personal info about the participant
+                                                                                </span>
+                                        <div class="form-group row m-b-10">
+                                            <label class="col-md-3 col-form-label text-md-right">First
+                                                Name <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="firstname" placeholder="First Name" data-parsley-group="step-1" data-parsley-required="true" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row m-b-10">
+                                            <label class="col-md-3 col-form-label text-md-right">Last
+                                                Name <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="lastname" placeholder="Last Name" data-parsley-group="step-1" data-parsley-required="true" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row m-b-10">
+                                            <label class="col-md-3 col-form-label text-md-right">Sex <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+
+                                                <select class="custom-select" name="gender" required>
+                                                    <option value="" disabled selected>-- Select a gender --</option>
+                                                    <option value="m">Male</option>
+                                                    <option value="f">Female</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group row m-b-10">
+                                            <label class="col-md-3 col-form-label text-md-right">Address</label>
+                                            <div class="col-md-6">
+                                                <textarea name="address" class="form-control form-control-lg textarea-autogrow" placeholder="Enter Your Address" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div id="step-6" class="step-content">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-8 offset-md-2">
+                                                                                <span class="d-block no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">
+                                                                                    You contact info, so that we can
+                                                                                    easily reach the participant
+                                                                                </span>
+                                        <div class="form-group row m-b-10">
+                                            <label class="col-md-3 col-form-label text-md-right">Mobile
+                                                <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="phone" placeholder="Mobile Number" required data-parsley-group="step-2" data-parsley-required="true" data-parsley-type="number" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row m-b-10">
+                                            <label class="col-md-3 col-form-label text-md-right">Email</label>
+                                            <div class="col-md-6">
+                                                <input type="email" name="email" placeholder="Email" class="form-control" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group row m-b-10">
+                                            <label class="col-md-3 col-form-label text-md-right">Location
+                                                <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <input type="text" name="location" placeholder="Location" data-parsley-group="step-2" data-parsley-required="true" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div id="step-7" class="step-content">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-8 offset-md-2">
+                                                                                <span class="d-blockno-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">
+                                                                                    Select where appropriate
+                                                                                </span>
+
+                                        <div class="form-group row m-b-10">
+                                            <label class="col-md-3 col-form-label text-md-right">Designation
+                                                <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+
+                                                <select class="custom-select" name="designation" >
+                                                    <option value="" disabled selected>-- Select a designation --</option>
+                                                    {% for designation in desig %}
+                                                        <option value="{{ designation.selector }}">{{ designation.category }}</option>
+                                                    {% endfor %}
+                                                </select>
+
+                                                <p class="font-xs mb-0 mt-3">Enter the designation below if not available above</p>
+                                                <input type="text" name="designation_text" placeholder="" class="form-control" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group row m-b-10">
+                                            <label class="col-md-3 col-form-label text-md-right">Organization
+                                                <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <select class="custom-select" name="organization" >
+                                                    <option value="" disabled selected>-- Select a organization --</option>
+                                                    {% for organization in org %}
+                                                        <option value="{{ organization.selector }}">{{ organization.name }}</option>
+                                                    {% endfor %}
+                                                </select>
+
+                                                <p class="font-xs mb-0 mt-3">Enter the designation below if not available above</p>
+                                                <input type="text" name="organization_text" placeholder="" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div id="step-8" class="step-content">
+                            <div class="jumbotron m-b-0 text-center">
+                                <h2 class="text-inverse">Review & Confirm details</h2>
+                                <p class="m-b-30 f-s-16">
+                                   Are you sure you have reviewed and confirmed all your entries before proceeding?
+                                </p>
+
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="navbar btn-toolbar sw-toolbar sw-toolbar-bottom">
+                        <div class="btn-group navbar-btn sw-btn-group pull-right" role="group">
+                            <button class="btn btn-default sw-btn-prev disabled" type="button">Previous</button>
+                            <button class="btn btn-default sw-btn-next" type="button">Next</button></div>
+                    </nav>
+                    <!-- end wizard-content -->
+                </div>
+                <!-- end wizard -->
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

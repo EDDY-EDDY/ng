@@ -1,0 +1,24 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+
+    <div class="sm-wrapper" data-sortable-id="sm_form_wizard_validation_2">
+
+        <div class="sm-box padding_50 text-center">
+
+       <i class="fa fa-check text-success font-xl-3"></i>
+
+            <p class="font-lg-3 mt-3 mb-2">Registration Complete</p>
+            <p class="lead mb-5">{{ duser.firstname }} {{ duser.lastname }} has been registered as a <b>{{ duser.designation.category }}</b> with <b>{{ duser.organization.name }}</b></p>
+
+            <p class="font-lg text-danger">Code: {{ duser.code }}</p>
+
+            <a href="{{ path('admin_register_participants') }}" class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> Register another participant</a>
+            <strong>OR</strong>
+            <a href="{{ path('admin_participant_capture', {'selector':duser.selector}) }}" class="btn btn-warning btn-lg"><i class="fa fa-camera"></i> Continue & capture photo</a>
+
+
+        </div>
+    </div>
+
+{% endblock %}

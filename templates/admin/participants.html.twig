@@ -1,0 +1,55 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+
+    <div class="title_box sm-header-style-1">
+
+        <h6 class="sm-header nodrag">
+           All registered participant
+        </h6>
+    </div>
+    <div class="sm-box">
+
+    <table id="data-table" class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>S/N</th>
+            <th>Full name</th>
+            <th>Designation</th>
+            <th>Organization</th>
+            <th>Location</th>
+            <th>Registration Code</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set i = 1 %}
+        {% for participant in participants %}
+
+        <tr>
+            <td>{{ i }}</td>
+            <td>{{ participant.firstname }} {{ participant.lastname }}</td>
+            <td>{{ participant.designation.category }}</td>
+            <td>{{ participant.organization.name }}</td>
+            <td>{{ participant.location }}</td>
+            <td>{{ participant.code }}</td>
+            <td>
+                {% if participant.picture == '' %}
+                <a href="{{ path('admin_participant_capture', {'selector':participant.selector}) }}" class="btn btn-sm btn-warning btn-block"><i class="fa fa-camera"></i> Capture Photo</a>
+                {% endif %}
+
+                <a href="{{ path('admin_print_slip', {'selector':participant.selector}) }}" class="btn btn-sm btn-primary btn-block"><i class="fa fa-print"></i> Print Slip</a>
+                <a href="{{ path('admin_delete_participant', {'selector':participant.selector}) }}" class="btn btn-sm btn-danger btn-block"><i class="fa fa-close"></i> Delete</a>
+                <a href="{{ path('admin_edit_participant', {'selector':participant.selector}) }}" class="btn btn-sm btn-warning btn-block"><i class="fa fa-pencil"></i> Edit</a>
+            </td>
+        </tr>
+
+            {% set i = (i+1) %}
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+    </div>
+
+{% endblock %}

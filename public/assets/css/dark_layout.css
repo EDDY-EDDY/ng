@@ -1,0 +1,156 @@
+/**	Dark Layout
+*************************************************** **/
+body.dark_layout .form-control, body.dark_layout .input-group-addon,
+body.dark_layout .form-default .form-control:focus,
+body.dark_layout .form-default .input-group--style-1 .form-control:focus + .input-group-addon {
+    background-color: rgba(18, 22, 41, 0.22);
+    border-color: rgba(18, 22, 41, 0.34);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/**	BG Normal
+*************************************************** **/
+body.dark_layout .sm-box,
+body.dark_layout .todo-group-title,
+body.dark_layout .bootstrap-calendar .calendar,
+body.dark_layout .block--style-3 ul.aux-info li,
+body.dark_layout .block-body,
+body.dark_layout .card,
+body.dark_layout .sw-main .sw-toolbar,
+body.dark_layout .dropzone,
+body.dark_layout .tagit.ui-widget,
+body.dark_layout ul.tagit input[type="text"],
+body.dark_layout .scrumboard.white,
+body.dark_layout .timeline-footer,
+body.dark_layout .bg-white,
+body.dark_layout .block-post-comments--style-1 li:nth-child(odd),
+body.dark_layout .block-post-comments--style-1 li:nth-child(even),
+body.dark_layout .tab-body,
+body.dark_layout .block-footer {
+    background: #343a40;
+}
+
+/**	BG Color Normal
+*************************************************** **/
+body.dark_layout .o365cs-newALV3-on .o365cs-nav-navMenuContent,
+body.dark_layout #login_modal .bg-white,
+body.dark_layout .bg-silver,
+body.dark_layout .pvr-reply,
+body.dark_layout .up-controls,
+body.dark_layout .profile-stats,
+body.dark_layout .profile-useful-links,
+body.dark_layout .accordion--style-1 .card-title,
+body.dark_layout .accordion--style-5 .card-title,
+body.dark_layout .invoice,
+body.dark_layout .result-price,
+body.dark_layout .result-info,
+body.dark_layout .timeline .timeline-body,
+body.dark_layout .pvr-list-w,
+body.dark_layout .pvr-side-menu,
+body.dark_layout .pvr-full-message-w .aec-full-message,
+body.dark_layout .pvr-full-chat-w .pvr-full-chat-middle,
+body.dark_layout .pvr-full-chat-w .pvr-full-chat-left,
+body.dark_layout .pvr-full-chat-w .full-chat-right,
+body.dark_layout .scrumboard-item .sm_scr_foot,
+body.dark_layout .pri_plan_parent,
+body.dark_layout .select2-container--default .select2-selection--single,
+body.dark_layout .select2-container--default .select2-selection--multiple,
+body.dark_layout .sw-main .sw-container .step-content,
+body.dark_layout .pricing-plans .block,
+body.dark_layout .tabs--style-1 .nav-tabs > li > a:not(.active),
+body.dark_layout .note-editor.note-frame .note-editing-area .note-editable,
+body.dark_layout .pricing-plans--style-3 .block-pricing .plan-title-wrapper,
+body.dark_layout .widget_1 .row > div,
+body.dark_layout .top-navbar .top-navbar-menu ul.top-menu > li ul.sub-menu {
+    background-color: #343a40 !important;
+}
+
+/**	BG Dark
+*************************************************** **/
+body.dark_layout .chats .message,
+body.dark_layout .sm_bodered_widget,
+body.dark_layout .parsley-error,
+body.dark_layout .sw-main .sw-toolbar .sw-btn-prev,
+body.dark_layout .sw-main .sw-toolbar .sw-btn-prev.disabled,
+body.dark_layout .sw-main .sw-toolbar .sw-btn-prev.disabled:hover,
+body.dark_layout .sw-main .sw-toolbar .sw-btn-prev.disabled:focus,
+body.dark_layout .sw-theme-default > ul.step-anchor > li > a,
+body.dark_layout .sw-theme-default > ul.step-anchor > li > a:hover,
+body.dark_layout ul.tagit.white li.tagit-choice-editable,
+body.dark_layout .activity-boxes-w .activity-box {
+    background: #242a30;
+}
+
+/**	BG Color Dark
+*************************************************** **/
+body.dark_layout .bootstrap-calendar .event a,
+body.dark_layout .market-button,
+body.dark_layout code,
+body.dark_layout .dropdown-menu,
+body.dark_layout .list-group-item,
+body.dark_layout .table-active,
+body.dark_layout .table-active > td,
+body.dark_layout .table-active > th,
+body.dark_layout .table-hover tbody tr:hover,
+body.dark_layout .table-striped tbody tr:nth-of-type(odd),
+body.dark_layout .jumbotron,
+body.dark_layout .scrumboard-item,
+body.dark_layout .pvr-full-chat-w .pvr-full-chat-left .user-list .user-w .user-date,
+body.dark_layout .pvr-full-chat-w .chat-content-w .chat-message .chat-message-content.theme_2,
+body.dark_layout #chat_box,
+body.dark_layout .pvr-full-chat-w .chat-content-w .chat-date-separator span,
+body.dark_layout .table .cell-image-list .cell-img-more {
+    background-color: #242a30 !important;
+}
+
+/**	Text Color
+*************************************************** **/
+body.dark_layout .o365cs-base *,
+body.dark_layout .breadcrumb-pageheader *,
+body.dark_layout #container *,
+body.dark_layout #login_modal,
+body.dark_layout .heading,
+body.dark_layout .navbar-nav .dropdown-menu .dropdown-item:not(.active),
+body.dark_layout .close,
+body.dark_layout .dropdown-item,
+body.dark_layout .top-navbar .top-navbar-menu ul.top-menu > li ul.sub-menu > li > a:not(.btn),
+body.dark_layout .dropdown-cart .dc-quantity,
+body.dark_layout .dropdown-cart .dc-price,
+body.dark_layout .dropdown-cart .dc-product-name a,
+body.dark_layout .dropdown-cart .dc-actions button{
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark_layout .sm-wrapper .sm-header,
+body.dark_layout .sm-wrapper .sm-info,
+body.dark_layout .card > .card-title, .card > .card-header {
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark_layout .popupShadow,
+body.dark_layout .card,
+body.dark_layout .top-menu .dropdown-menu{
+    border: 1px solid #343a40 !important;
+}
+
+body.dark_layout hr {
+    border-top-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+body.dark_layout .block--style-3 {
+    border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/**	Chat History
+*************************************************** **/
+body.dark_layout .chats .message:before {
+    border-right-color: #242a30;
+}
+
+body.dark_layout .chats .right .message:before {
+    border-left-color: #242a30;
+}
+
+body.dark_layout .timeline .timeline-body:before {
+    border-right-color: #343a40;
+}

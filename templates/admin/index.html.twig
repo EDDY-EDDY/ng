@@ -1,0 +1,138 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+
+    <div class="sm-wrapper" data-sortable-id="sm_carousel_2">
+
+
+    <div class="title_box">
+
+        <h6 class="sm-header">
+            Site Statistics
+        </h6>
+    </div>
+    <div class="ui-block">
+        <div class="card sm_bg_3 widget_1">
+            <div class="row no-gutters">
+                <div class="col-lg-4 no-bg  col-md-6">
+                    <i class="icon icon-users text-white"></i>
+                    <div class="wid-content ">
+                            <label class="text-white">Total Participants</label>
+                        <h2 class="text-white">{{ participants|length|number_format }}</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4  col-md-6 b-l">
+                    <i class="ion ion-ios-camera font-xl-3 text-white"></i>
+                    <div class="wid-content">
+                        <label class="text-white">Awaiting Capture</label>
+                        <h2 class="text-white">
+                            {% set await = 0 %}
+                            {% for part in participants %}
+
+                                {% if part.picture == '' %}
+
+                                    {% set await = (await + 1) %}
+                                {% endif %}
+
+                            {% endfor %}
+
+                            {{ await|number_format }}
+
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 no-bg col-md-6 b-l">
+                    <i class="material-icons font-xl-3 text-white">camera_front</i>
+                    <div class="wid-content">
+                        <label class="text-white">Participants Captured</label>
+                        <h2 class="text-white">
+                            {% set await = 0 %}
+                            {% for part in participants %}
+
+                                {% if part.picture == '' %}
+                                {% else %}
+                                    {% set await = (await + 1) %}
+                                {% endif %}
+
+                            {% endfor %}
+
+                            {{ await|number_format }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 b-l">
+                    <i class="fa fa-male text-white font-xl-3"></i>
+                    <div class="wid-content">
+                        <label class="text-white">Male Participants</label>
+                        <h2 class="text-white">
+                            {% set male = 0 %}
+                            {% for part in participants %}
+
+                                {% if part.sex == 'm' %}
+
+                                    {% set male = (male + 1) %}
+                                {% endif %}
+
+                            {% endfor %}
+
+                            {{ male|number_format }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 no-bg col-md-6 b-l">
+                    <i class="fa fa-female text-white font-xl-3"></i>
+                    <div class="wid-content">
+                        <label class="text-white">Female Participants</label>
+                        <h2 class="text-white">
+                            {% set female = 0 %}
+                            {% for part in participants %}
+
+                                {% if part.sex == 'f' %}
+
+                                    {% set female = (female + 1) %}
+                                {% endif %}
+
+                            {% endfor %}
+
+                            {{ female|number_format }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 no-bg col-md-6 b-l">
+                    <i class="fa fa-building text-white font-xl-3"></i>
+                    <div class="wid-content">
+                        <label class="text-white">Organizations</label>
+                        <h2 class="text-white">
+                            {{ organizations|length|number_format }}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="title_box mt-5">
+
+            <h6 class="sm-header">
+                Designation Statistics
+            </h6>
+        </div>
+    <div class="row">
+        {% for des in designation %}
+
+        <div class="col-6 col-sm-3 col-xl-2 mb-3">
+            <a class="sm-box sm_bodered_widget centered trend-in-corner xs" href="#">
+                <div class="label">{{ des.category }}</div>
+                <div class="value font-lg">{{ des.participant|length }}</div>
+
+            </a>
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+
+    </div>
+{% endblock %}

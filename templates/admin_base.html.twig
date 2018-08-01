@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <!-- FAVICON -->
+            <link href="http://via.placeholder.com/32x32" rel="icon" type="image/png">
+            <!-- BOOTSTRAP -->
+            <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" type="text/css">
+            <!-- JQUERY UI -->
+            <link type="text/css" href="{{ asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.css') }}" rel="stylesheet">
+            <!-- STYLE -->
+            <link id="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" rel="stylesheet" media="screen">
+            <!-- CUSTOM STYLE -->
+            <link type="text/css" href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+
+            <link href="{{ asset('assets/plugins/toastr/toastr.css') }}" rel="stylesheet">
+
+            <!--  MODERNIZR JS -->
+            <script src="{{ asset('assets/plugins/modernizr/modernizr-custom.js') }}"></script>
+
+            <link href="{{ asset('assets/plugins/jquery-smart-wizard/src/css/smart_wizard.css') }}" rel="stylesheet">
+            <link href="{{ asset('assets/plugins/parsley/src/parsley.css') }}" rel="stylesheet">
+
+
+
+
+            <link href="{{ asset('assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css') }}" rel="stylesheet"/>
+
+
+
+            <link href="{{ asset('assets/plugins/DataTables/extensions/FixedHeader/css/fixedHeader.bootstrap.min.css') }}" rel="stylesheet"/>
+
+        <link href="{{ asset('assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css') }}" rel="stylesheet"/>
+
+
+
+
+    <link type="text/css" href="{{ asset('assets/look_css/css/look_base_v2.css') }}" rel="stylesheet">
+            <!--  PLUGINS -->
+            <link type="text/css" href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css') }}" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+
+    <!-- BEGIN PRELOADER -->
+    <div id="preloader">
+        <div class="inner">
+            <span class="loader"></span>
+        </div>
+    </div>
+    <!-- END PRELOADER -->
+
+
+
+    <!-- BEGIN MAIN WRAPPER -->
+    <div class="body-wrap">
+        <!--BEGIN SM CONTAINER-->
+        <div id="sm-container" class="sm-container">
+
+
+
+
+
+
+
+
+            <!-- BEGIN SM PUSHER -->
+            <div class="sm-pusher">
+                <div class="sm-content">
+                    <div class="sm-content-inner">
+                        <!-- BEGIN HEADER -->
+                        <div class="header">
+                            <!-- BEGIN TOP BAR -->
+                            <div class="top-navbar bg-green text-white" id="top-navbar">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="aux-text d-none d-md-inline-block">
+                                                <ul class="inline-links inline-links--style-1">
+                                                    <li class="d-none text-white d-lg-inline-block">
+                                                        11th Floor Federal Secretariat,
+                                                        Central Business District
+                                                        FCT Abuja, Nigeria
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <nav class="top-navbar-menu">
+                                                <ul class="top-menu">
+
+                                                    <li>
+                                                        <a href="javascript:void(0)"> +234 9083024407</a>
+                                                    </li>
+                                                    <li class="d-none d-lg-inline-block">
+                                                        <a href="javascript:void(0)">+234 8033087094</a>
+                                                    </li>
+                                                    <li id="open_ms_menu">
+                                                        <a href="javascript:void(0)" class="">+234 8034508837</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0)">
+                                                            dprs@nigerdelta.gov.ng
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END TOP BAR-->
+
+
+
+                            <!-- BEGIN NAVBAR -->
+                            <nav id="header"
+                                 class="navbar navbar-expand-lg navbar--bold navbar-light bg-default navbar--bb-1px">
+                                <!--navbar-inverse bg-dark-->
+                                <div class="container navbar-container">
+                                    <!-- BEGIN LOGO -->
+                                    <a class="navbar-brand" href="index.html">
+                                        <h5 style="font-family: impact;" class="font-green">Ministry of Niger Delta Affairs</h5>
+                                    </a>
+                                    <!--END LOGO-->
+
+
+                                    <div class="collapse navbar-collapse align-items-center justify-content-end"
+                                         id="navbar_main">
+
+                                    {% include 'common/admin_nav.html.twig' %}
+
+                                    </div>
+
+                                </div>
+                            </nav>
+                            <!--END NAV BAR-->
+                        </div>
+                        <!--END HEADER-->
+
+                        <!-- BEGIN PAGE TITLE -->
+                        <section id="transparent_menu" class="slice-xl has-bg-cover bg-size-cover"
+                                 style="background-image: url('http://via.placeholder.com/1980x1322'); background-position: center center;display: none;">
+                            <span class="mask mask-base-1--style-1 opacity-70"></span>
+                            <div class="container no-padding">
+                                <div class="col-md-6">
+                                    <h3 class="heading heading-xl strong-400 text-normal c-white">
+                                        Layouts
+                                    </h3>
+                                    <p class="lead text-normal strong-300 c-white mt-3 line-height-1_8">
+                                        As an entrepreneur you keep trying things, and I try everything. I try business
+                                        ideas, on our website we test everything, iterate, iterate, iterate.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- END PAGE TITLE -->
+
+                        <!--BEGIN CONTENT-->
+                        <section id="main_content" class="bg slice-sm sct-color-1">
+                            <div class="container" id="container">
+                                <!--BEGIN BREADCRUMB-->
+                                <div class="breadcrumb-pageheader p-b-25">
+                                    <ol class="breadcrumb sm-breadcrumb">
+                                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{ page_title }}</a></li>
+                                    </ol>
+                                    <h1 class="sm-pagetitle--style-1 font-lg-2 has_page_title">{{ page_title }}</h1>
+                                </div>
+                                <!--END BREADCRUMB-->
+
+                                <!--BEGIN PAGE CONTENT-->
+                                <div class="sm-content dashboard_v3">
+                                    <div class="sm-content-box">
+
+
+                                       {% block body %}{% endblock %}
+
+
+
+                                    </div>
+                                </div>
+                                <!--END PAGE CONTENT-->
+                            </div>
+                        </section>
+                        <!--END CONTENT-->
+
+
+                        {% include 'common/admin_footer.html.twig' %}
+
+                    </div>
+                </div>
+            </div>
+            <!-- END SM PUSHER -->
+        </div>
+        <!--END SM CONTAINER-->
+    </div>
+    <!-- END MAIN WRAPPER -->
+
+
+
+
+
+        {% block javascripts %}
+            <!-- CORE JS -->
+            <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/popper/popper.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('assets/js/slidebar/slidebar.js') }}"></script>
+            <script src="{{ asset('assets/js/classie.js') }}"></script>
+            <script src="{{ asset('assets/js/side_menu.js') }}"></script>
+
+            <!-- PLUGINS -->
+            <script src="{{ asset('assets/plugins/pace/pace.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/smooth-scrollbar/smooth-scrollbar.js') }}"></script>
+            <script src="{{ asset('assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/placeholders/placeholders.js') }}"></script>
+
+            <script src="{{ asset('assets/plugins/toastr/toastr.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-smart-wizard/src/js/jquery.smartWizard.js') }}"></script>
+
+    <script src="{{ asset('assets/js/sm_form_wizard_validation.js') }}"></script>
+    <script src="{{ asset('assets/plugins/parsley/dist/parsley.js') }}"></script>
+
+            <!-- APP JS -->
+            <script src="{{ asset('assets/js/app.js') }}"></script>
+            <script src="{{ asset('assets/js/sm_login_demo.js') }}"></script>
+            <script src="{{ asset('assets/js/sm_notification.js') }}"></script>
+
+
+
+    <script src="{{ asset('assets/plugins/DataTables/media/js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/DataTables/extensions/FixedHeader/js/dataTables.fixedHeader.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/sm_tables_dataTable_Fixed_Header.js') }}"></script>
+
+
+
+
+    </body>
+
+
+    {% endblock %}
+
+    </body>
+</html>
+
+
+{% for flashMessage in app.session.flashbag.get('error') %}
+
+    <script>
+        toastr.error("{{ flashMessage }}");
+    </script>
+
+{% endfor %}
+
+
+
+    {% for flashMessage in app.session.flashbag.get('success') %}
+
+        <script>
+            toastr.success("{{ flashMessage }}");
+        </script>
+
+    {% endfor %}

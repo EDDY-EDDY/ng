@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <!-- FAVICON -->
+            <link href="http://via.placeholder.com/32x32" rel="icon" type="image/png">
+            <!-- BOOTSTRAP -->
+            <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" type="text/css">
+            <!-- JQUERY UI -->
+            <link type="text/css" href="{{ asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.css') }}" rel="stylesheet">
+            <!-- STYLE -->
+            <link id="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" rel="stylesheet" media="screen">
+            <!-- CUSTOM STYLE -->
+            <link type="text/css" href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+
+            <link href="{{ asset('assets/plugins/toastr/toastr.css') }}" rel="stylesheet">
+
+
+            <!--  MODERNIZR JS -->
+            <script src="{{ asset('assets/plugins/modernizr/modernizr-custom.js') }}"></script>
+
+
+            <link type="text/css" href="{{ asset('assets/look_css/css/look_base_v2.css') }}" rel="stylesheet">
+            <!--  PLUGINS -->
+            <link type="text/css" href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css') }}" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+
+    <!-- BEGIN PRELOADER -->
+    <div id="preloader">
+        <div class="inner">
+            <span class="loader"></span>
+        </div>
+    </div>
+    <!-- END PRELOADER -->
+
+
+
+    <!-- BEGIN MAIN WRAPPER -->
+    <div class="body-wrap">
+        <div class="login login-v3">
+            <!-- begin news-feed -->
+            <div class="news-feed">
+                <div class="news-image">
+                    <img src="{{ asset('assets/img/immt.jpg') }}" width="200%" data-id="login-cover-image" alt=""/>
+                </div>
+                <div class="news-caption">
+                   <h1 style="font-family: impact;text-transform: uppercase;color:#fff ">Ministry of Niger Delta Affairs</h1>
+                </div>
+            </div>
+            <!-- end news-feed -->
+            <!-- begin right-content -->
+            <div class="right-content fullvh">
+                <!-- begin login-header -->
+                <div class="login-header">
+                    <div class="text-center text-success font-lg">
+                        <img src="{{ asset('assets/img/coat.png') }}" width="100"> <br>
+                        3rd National Council On Niger Delta
+
+                    </div>
+
+                </div>
+                <!-- end login-header -->
+                <!-- begin login-content -->
+                <div class="login-content">
+                    {% block body %}{% endblock %}
+
+                </div>
+                <!-- end login-content -->
+            </div>
+            <!-- end right-container -->
+        </div>
+    </div>
+    <!-- END MAIN WRAPPER -->
+
+
+
+
+
+
+        {% block javascripts %}
+            <!-- CORE JS -->
+            <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/popper/popper.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('assets/js/slidebar/slidebar.js') }}"></script>
+            <script src="{{ asset('assets/js/classie.js') }}"></script>
+            <script src="{{ asset('assets/js/side_menu.js') }}"></script>
+
+            <!-- PLUGINS -->
+            <script src="{{ asset('assets/plugins/pace/pace.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/smooth-scrollbar/smooth-scrollbar.js') }}"></script>
+            <script src="{{ asset('assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js') }}"></script>
+            <script src="{{ asset('assets/plugins/placeholders/placeholders.js') }}"></script>
+
+            <script src="{{ asset('assets/plugins/toastr/toastr.min.js') }}"></script>
+
+
+            <!-- APP JS -->
+            <script src="{{ asset('assets/js/app.js') }}"></script>
+            <script src="{{ asset('assets/js/sm_login_demo.js') }}"></script>
+            <script src="{{ asset('assets/js/sm_notification.js') }}"></script>
+
+
+
+    </body>
+
+
+    {% endblock %}
+
+
+
+    {% if error %}
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+        <script>
+            toastr.error("{{ error.messageKey|trans(error.messageData, 'security') }}");
+        </script>
+
+    {% endif %}
+    </body>
+</html>

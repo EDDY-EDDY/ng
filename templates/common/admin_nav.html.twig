@@ -1,0 +1,51 @@
+<!-- BEGIN NAVBAR LINKS -->
+<ul class="navbar-nav">
+    <li class="nav-item dropdown {% if page_title == 'Dashboard' %}active{% endif %}">
+        <a href="{{ path('admin_dashboard') }}" class="nav-link">
+            <i class="icon ion-ios-home-outline icon_nav"></i> Dashboard
+        </a>
+
+    </li>
+
+    <li class="nav-item {% if page_title == 'Participants' %}active{% endif %}">
+        <a href="{{ path('admin_participants') }}" class="nav-link">
+            <i class="icon ion-ios-home-outline icon_nav"></i> Participants
+        </a>
+
+    </li>
+
+    <li class="nav-item {% if page_title == 'Register Participants' %}active{% endif %}">
+        <a href="{{ path('admin_register_participants') }}" class="nav-link">
+            <i class="icon ion-ios-home-outline icon_nav"></i> Register Participants
+        </a>
+
+    </li>
+
+    <li class="nav-item {% if page_title == 'Print Slip' %}active{% endif %}">
+        <a href="{{ path('admin_print_slip') }}" class="nav-link">
+            <i class="icon ion-ios-home-outline icon_nav"></i> Print Slip
+        </a>
+
+    </li>
+
+    <li class="nav-item {% if page_title == 'Report' %}active{% endif %}">
+        <a href="{{ path('admin_report') }}" class="nav-link">
+            <i class="icon ion-ios-home-outline icon_nav"></i> Report
+        </a>
+
+    </li>
+    <li class="nav-item ">
+        <a href="{{ path('admin_dashboard') }}" class="nav-link">
+            <i class="icon ion-ios-home-outline icon_nav"></i> Settings
+        </a>
+
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('logout') }}">
+            <i class="icon ion-ios-analytics-outline icon_nav"></i> Logout
+        </a>
+    </li>
+
+</ul>
+<!-- END NAVBAR LINKS -->

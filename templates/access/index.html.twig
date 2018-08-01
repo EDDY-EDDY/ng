@@ -1,0 +1,40 @@
+{% extends 'access_base.html.twig' %}
+
+{% block body %}
+
+    <form method="POST" action="{{ path('login') }}" class="margin-bottom-0">
+        <div class="row mb-3">
+            <div class="col-lg-12 sm-form-design">
+                <input type="text" value="{{ last_username }}"  name="_username"
+                       class="form-control h5-email"
+                       placeholder="Please enter your email address"
+                       autocomplete="off"
+                       tabindex="1"
+                       maxlength="35" required>
+                <label class="control-label">EMAIL</label>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-lg-12 sm-form-design">
+                <input type="password" name="_password"
+                       class="form-control h5-email"
+                       placeholder="Please enter your password"
+                       autocomplete="off"
+                       tabindex="2"
+                       maxlength="35" required>
+                <label class="control-label">PASSWORD</label>
+            </div>
+        </div>
+
+        <div class="login-buttons mb-5">
+            <button type="submit" class="btn btn-success btn-block btn-lg sm_bg_6 border-0">Sign me in
+            </button>
+        </div>
+
+        <hr/>
+        <p class="text-center f-s-12">
+            &copy; Ministry of Niger delta. All Right Reserved 2018
+        </p>
+    </form>
+
+{% endblock %}

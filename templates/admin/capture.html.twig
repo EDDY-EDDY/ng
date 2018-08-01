@@ -1,0 +1,159 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+
+    <div class="sm-content">
+        <div class="sm-content-box">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="user-profile compact">
+                        <div class="up-head-w" style="{% if duser.picture == '' %}background:green {% else %} background: url('../../../../{{ duser.picture }}'){% endif %};background-size: 100%">
+
+                            <div class="up-main-info" style="padding-top:10em;">
+
+                                <h2 class="up-header m-b-5">
+                                   {{ duser.firstname }} {{ duser.lastname }}
+                                </h2>
+                                <h6 class="up-sub-header">
+                                    PARTICIPANT
+                                </h6>
+                            </div>
+                            <svg class="decor" width="842px" height="219px" viewBox="0 0 842 219" preserveAspectRatio="xMaxYMax meet" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g transform="translate(-381.000000, -362.000000)" fill="#FFFFFF">
+                                    <path class="decor-path" d="M1223,362 L1223,581 L381,581 C868.912802,575.666667 1149.57947,502.666667 1223,362 Z"></path>
+                                </g>
+                            </svg>
+                        </div>
+
+
+
+                        <div class="profile-useful-links clearfix">
+                            <div class="useful-links">
+                                <p  class="border_bottom">
+                                  <strong>Designation:</strong> {{ duser.designation.category }}
+                                </p>
+                                <p  class="border_bottom">
+                                    <strong>Organization:</strong> {{ duser.organization.name }}
+                                </p>
+                                <p  class="border_bottom">
+                                    <strong>Sex:</strong> {{ duser.sex }}
+                                </p>
+                                <p  class="border_bottom">
+                                    <strong>Address:</strong> {{ duser.address }}
+                                </p>
+                                <p  class="border_bottom">
+                                    <strong>Phone:</strong> {{ duser.phone }}
+                                </p>
+
+
+    <a href="{{ path('admin_print_slip', {'selector':duser.selector}) }}" class="btn btn-primary btn-block btn-lg"><i class="fa fa-print"></i> Print slip</a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-8 res-xs-m-t-20 res-md-m-t-20">
+                    <div class="main-content">
+                        <div class="page-title">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 col-12">
+                                    <h2 class="heading heading-5 text-capitalize strong-500 mb-0">
+                                        <a href="javascript:void(0)" class="link text-underline--none">
+                                            <i class="ion-ios-cog-outline f-s-20 align-middle"></i>
+                                            Capture Photo
+                                        </a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-12 mx-auto">
+
+                            <div class="bg-gray row border p-2 rounded">
+
+                                <div class="col-sm-6 padding_20 mt-5">
+                                <img src="" style="border:5px solid green" id="screenshot" class="img-fluid">
+
+                                <form method="POST">
+                                    <input type="text" style="visibility: hidden" name="myfile" id="up_link">
+                                    <button id="screenshot_button" style="display: none;" class="btn btn-block mt-2 btn-primary">Upload picture</button>
+                                </form>
+
+                                </div>
+
+
+                                <div class="bg-white col-sm-6 p-3">
+
+                                    <video autoplay class="img-fluid" style="height:500px;bordeR:5px solid red"></video>
+
+
+
+                                    <script>
+
+
+
+                                        var constraints = {
+                                            video: true
+                                        };
+
+                                        var video = document.querySelector('video');
+
+
+                                        function handleSuccess(stream) {
+                                            video.srcObject = stream;
+                                        }
+
+                                        navigator.mediaDevices.getUserMedia(constraints).
+                                        then(handleSuccess);
+
+
+
+
+                                        function snap()
+                                        {
+                                            var canvas = document.createElement('canvas');
+                                            canvas.width = 640;
+                                            canvas.height = 480;
+                                            var ctx = canvas.getContext('2d');
+
+                                            //draw image to canvas. scale to target dimensions
+                                            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+//convert to desired file format
+                                            var dataURI = canvas.toDataURL('image/jpeg');
+
+                                            $("#screenshot_button").show();
+
+                                            $("#up_link").attr('value',dataURI);
+                                            $("#screenshot").attr('src', dataURI);
+
+                                        };
+
+
+
+
+
+                                    </script>
+                                    <button id="screenshot_button" onclick="snap()" class="btn btn-block mt-2 btn-success btn-outline-success">Take picture</button>
+                                </div>
+
+
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

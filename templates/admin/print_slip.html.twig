@@ -1,0 +1,97 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+    <script>
+        function PrintElem(elem)
+        {
+            var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+            mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+
+
+
+            mywindow.document.write("<link rel='stylesheet' href='/public/assets/plugins/bootstrap/css/bootstrap.min.css' type='text/css'>");
+
+
+            mywindow.document.write("<link type='text/css' href='/public/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.css' rel='stylesheet'>");
+
+            mywindow.document.write("<link id='stylesheet' type='text/css' href='/public/assets/css/style.css' rel='stylesheet' media='screen'>");
+
+            mywindow.document.write("<link type='text/css' href='/public/assets/css/custom.css' rel='stylesheet'>");
+
+            mywindow.document.write("<link href='/public/assets/plugins/toastr/toastr.css' rel='stylesheet'>");
+            mywindow.document.write('</head><body >');
+
+            mywindow.document.write(document.getElementById(elem).innerHTML);
+            mywindow.document.write('</body></html>');
+
+            mywindow.document.close(); // necessary for IE >= 10
+            mywindow.focus(); // necessary for IE >= 10*/
+
+            mywindow.print();
+          //  mywindow.close();
+
+            return true;
+        }
+    </script>
+
+
+    <div class="sm-content col-sm-6 mx-auto">
+
+        <div class="sm-box">
+        <form method="POST" class="mb-2">
+            <span>Enter the registration code:</span>
+            <div class="input-group">
+            <input type="text" class="form-control" name="reg_code" value="{% if duser %}{{ duser.code }}{% endif %}" placeholder="Enter Registration Code">
+                <input type="submit" value="Submit" class="btn btn-info">
+            </div>
+        </form>
+        </div>
+
+        {% if duser %}
+        <div class="sm-box" style="border:15px solid darkblue" id="SLIP">
+
+            <div class="text-center pt-5">
+            <img src="{{ asset('assets/img/coat.png') }}" width="150">
+    <h3 class="m-0 font-weight-900 text-danger" style="font-family:impact;">MINISTRY OF NIGER DELTA AFFAIRS</h3>
+                <h4 class="text-success font-weight-700">3rd National Council On Niger Delta</h4>
+                {#<h5 class="text-italic">Registration Slip</h5>#}
+
+                <hr>
+
+                <div class="col-sm-8 mx-auto text-center">
+                    <img src="{{ asset(duser.picture ) }}"  style="width:100%;">
+
+                </div>
+
+
+
+            <div class="text-center mt-3">
+                <h1 class=" m-0 font-weight-900">{{ duser.firstname }} {{ duser.lastname }}</h1>
+                <h5> {{ duser.organization.name }}</h5>
+               <p class="text-success lead">{{ duser.designation.category }}</p>
+            </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+        <button class="btn btn-success btn-block mt-3" onclick="PrintElem('SLIP')"><i class="fa fa-print"></i> Print</button>
+
+            {% else %}
+
+            <div class="sm-box text-center">
+                <p class="text-info font-sm-3"><i class="fa fa-info-circle"></i> Information</p>
+                <p>To print a slip, enter the code generated after registering the participant above. The registration slip will be displayed here</p>
+
+            </div>
+        {% endif %}
+    </div>
+
+
+
+{% endblock %}
