@@ -59,6 +59,15 @@ class UserTest extends PHPUnit\Framework\TestCase
     }
 
 
+    public function testUsername()
+    {
+        $user = new \App\Entity\User();
+
+        $user->setUsername($this->first_name);
+
+        $this->assertEquals($user->getUsername(), $this->first_name);
+    }
+
     public function testRoles()
     {
         $user = new \App\Entity\User();
