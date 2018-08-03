@@ -75,6 +75,6 @@ class UserTest extends PHPUnit\Framework\TestCase
         $user->setRoles('ROLE_USER');
 
         $this->assertContains('ROLE_USER', $user->getRoles());
-    }
+    }   
 
 }
